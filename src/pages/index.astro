@@ -1,0 +1,210 @@
+---
+import { getCollection, getEntryBySlug } from 'astro:content';
+import Layout from '../layouts/Layout.astro';
+// import Card from '../components/Card.astro';
+import Header from '../components/Header.astro';
+import Hero from '../components/Hero.astro';
+// import Posts from '../components/Posts.astro';
+import Text from '../components/Text.astro';
+import { Icon } from 'astro-icon';
+
+const images = [
+  {
+    url: 'https://fiverr-res.cloudinary.com/npm-assets/@fiverr/logged_out_homepage_perseus/apps/facebook.31d5f92.png',
+  },
+  {
+    url: 'https://fiverr-res.cloudinary.com/npm-assets/@fiverr/logged_out_homepage_perseus/apps/google.517da09.png',
+  },
+  {
+    url: 'https://fiverr-res.cloudinary.com/npm-assets/@fiverr/logged_out_homepage_perseus/apps/netflix.e3ad953.png',
+  },
+  {
+    url: 'https://fiverr-res.cloudinary.com/npm-assets/@fiverr/logged_out_homepage_perseus/apps/pandg.8b7310b.png',
+  },
+  {
+    url: 'https://fiverr-res.cloudinary.com/npm-assets/@fiverr/logged_out_homepage_perseus/apps/paypal.ec56157.png',
+  },
+];
+
+const Infos = [
+  {
+    title: 'The best for every budget',
+    text: 'Find high-quality services at every price point. No hourly rates, just project-based pricing.',
+  },
+  {
+    title: 'Quality work done quickly',
+    text: 'Find the right freelancer to begin working on your project within minutes.',
+  },
+  {
+    title: 'Protected payments, every time',
+    text: "Always know what you'll pay upfront. Your payment isn't released until you approve the work.",
+  },
+  {
+    title: '24/7 support',
+    text: 'Questions? Our round-the-clock support team is available to help anytime, anywhere.',
+  },
+];
+
+const Marketplaces = [
+  {
+    title: 'Graphics & Design',
+    icon: 'https://fiverr-res.cloudinary.com/npm-assets/@fiverr/logged_out_homepage_perseus/apps/graphics-design.d32a2f8.svg',
+  },
+  {
+    title: 'Digital Marketing',
+    icon: 'https://fiverr-res.cloudinary.com/npm-assets/@fiverr/logged_out_homepage_perseus/apps/online-marketing.74e221b.svg',
+  },
+  {
+    title: 'Writing & Translation',
+    icon: 'https://fiverr-res.cloudinary.com/npm-assets/@fiverr/logged_out_homepage_perseus/apps/writing-translation.32ebe2e.svg',
+  },
+  {
+    title: 'Video & Animation',
+    icon: 'https://fiverr-res.cloudinary.com/npm-assets/@fiverr/logged_out_homepage_perseus/apps/video-animation.f0d9d71.svg',
+  },
+  {
+    title: 'Music & AudioMusic & Audio',
+    icon: 'https://fiverr-res.cloudinary.com/npm-assets/@fiverr/logged_out_homepage_perseus/apps/music-audio.320af20.svg',
+  },
+  {
+    title: 'Programming & Tech',
+    icon: 'https://fiverr-res.cloudinary.com/npm-assets/@fiverr/logged_out_homepage_perseus/apps/programming.9362366.svg',
+  },
+  {
+    title: 'Business',
+    icon: 'https://fiverr-res.cloudinary.com/npm-assets/@fiverr/logged_out_homepage_perseus/apps/business.bbdf319.svg',
+  },
+  {
+    title: 'Lifestyle',
+    icon: 'https://fiverr-res.cloudinary.com/npm-assets/@fiverr/logged_out_homepage_perseus/apps/lifestyle.745b575.svg',
+  },
+  {
+    title: 'Data',
+    icon: 'https://fiverr-res.cloudinary.com/npm-assets/@fiverr/logged_out_homepage_perseus/apps/data.718910f.svg',
+  },
+  {
+    title: 'Photography',
+    icon: 'https://fiverr-res.cloudinary.com/npm-assets/@fiverr/logged_out_homepage_perseus/apps/photography.01cf943.svg',
+  },
+];
+---
+
+<Layout title='Welcome to My Blog'>
+  <Header />
+
+  <main>
+    <!-- hero -->
+    <Hero />
+    <!-- Trusted by -->
+    <section class='shadow-md bg-slate-800 p-5 flex items-center gap-3'>
+      <h2 class='text-slate-500 text-2xl hidden md:block ml-32'>Trusted by:</h2>
+      <ul class='flex items-center space-x-10'>
+        {
+          images.map(({ url }) => (
+            <li class=''>
+              <img class='' src={url} alt='' />
+            </li>
+          ))
+        }
+      </ul>
+    </section>
+
+    <!-- Popular professional services -->
+    <section class='py-10'>
+      <div class='max-w-7xl mx-auto px-10'>
+        <h2 class='text-[17px] md:text-4xl font-bold'>
+          Popular professional services
+        </h2>
+        <!-- sereviecs boxes -->
+        <div class='py-5 flex gap-3'>
+          <div class='relative'>
+            <img
+              src='https://fiverr-res.cloudinary.com/q_auto,f_auto,w_360,dpr_1.0/v1/attachments/generic_asset/asset/f27bec553efc12cc60baed89b8f2223e-1674661140708/ai-artists-2x.png'
+              class='rounded-sm object-cover'
+              alt=''
+            />
+            <div class='absolute top-0 left-4 my-2'>
+              <span class='text-white text-[17px]'>Add talent to AI</span>
+              <p class='text-white text-xl md:text-3xl'>AI Arrists</p>
+            </div>
+          </div>
+          <div class='relative'>
+            <img
+              src='https://fiverr-res.cloudinary.com/q_auto,f_auto,w_360,dpr_1.0/v1/attachments/generic_asset/asset/f27bec553efc12cc60baed89b8f2223e-1674661140708/ai-artists-2x.png'
+              class='rounded-sm object-cover'
+              alt=''
+            />
+            <div class='absolute top-0 left-4 my-2'>
+              <span class='text-white text-[17px]'>Add talent to AI</span>
+              <p class='text-white text-xl md:text-3xl'>AI Arrists</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!--A whole world of freelance talent at your fingertips  -->
+    <section class='bg-sky-100 py-10'>
+      <div class='max-w-7xl mx-auto'>
+        <div class='grid gap-3 md:grid-cols-2'>
+          <!-- left -->
+          <div class='px-10'>
+            <h2 class='text-xl md:text-4xl font-bold'>
+              A whole world of freelance talent at your fingertips
+            </h2>
+
+            <div class='flex flex-col py-3 space-y-2'>
+              {
+                Infos.map(({ title, text }) => (
+                  <div>
+                    <div class='flex items-center space-x-2'>
+                      <Icon
+                        pack='mdi'
+                        name='check-circle'
+                        class='w-9 text-slate-400'
+                      />
+
+                      <span class='text-xl font-bold'>{title}</span>
+                    </div>
+                    <p class='text-[20px] p-2'>{text}</p>
+                  </div>
+                ))
+              }
+            </div>
+          </div>
+          <!-- right -->
+          <div>
+            <img
+              src='https://fiverr-res.cloudinary.com/q_auto,f_auto,w_700,dpr_1.0/v1/attachments/generic_asset/asset/089e3bb9352f90802ad07ad9f6a4a450-1599517407052/selling-proposition-still-1400-x1.png'
+              alt=''
+              class='w-full object-contain rounded-md'
+            />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!--Explore the marketplace -->
+    <section class='py-10'>
+      <div class='max-w-7xl mx-auto px-10'>
+        <h2 class='text-[17px] md:text-4xl font-bold'>
+          Explore the marketplace
+        </h2>
+
+        <div class="grid gap-3 grid-cols-2 md:grid-cols-4 xl:grid-cols-5 place-content-center py-10">
+          {
+            Marketplaces.map(({ title, icon }) => (
+              <ul class="py-4">
+                <li class="text-[#222325] text-center relative flex flex-col items-center justify-center ">
+                  <span class="border border-red-900 absolute w-10  top-12 hover:w-20  transition-all duration-300 cursor-pointer"></span>
+                  <img class='block w-[48px] h-[48px]' src={icon} alt='' />
+                  {title}
+                </li>
+              </ul>
+            ))
+          }
+        </div>
+      </div>
+    </section>
+  </main>
+</Layout>

@@ -1,0 +1,71 @@
+---
+import { Icon } from 'astro-icon';
+const Links = [
+  {
+    title: 'fiverr business',
+    url: '',
+  },
+  {
+    title: 'expllore',
+    url: '',
+  },
+  {
+    title: 'english',
+    url: '',
+  },
+  {
+    title: 'EuR',
+    url: '',
+  },
+  {
+    title: 'become a seller',
+    url: '',
+  },
+];
+---
+
+<header class='flex items-center justify-between p-2 bg-gray-900'>
+  <!-- left -->
+  <div class='flex items-center justify-center space-x-1'>
+    <Icon pack='mdi' name='menu' class='md:hidden w-9 text-slate-100' />
+    <a href='/' class=''>
+      <h5
+        class='flex items-center text-2xl md:text-4xl text-white font-bold relative'
+      >
+        fiverr
+        <p
+          class='bg-green-500 p-[3.17px] absolute bottom-1 -right-2 rounded-full'
+        >
+        </p>
+      </h5>
+    </a>
+  </div>
+
+  <!-- small menu -->
+  <ul class='flex lg:hidden items-center justify-center gap-2'>
+    <li class='text-white text-xl'>sing In</li>
+    <li
+      class='border border-white rounded px-2 text-white hover:bg-green-500 transition-all duration-200'
+    >
+      Join
+    </li>
+  </ul>
+
+  <!-- right -->
+  <ul class='hidden lg:flex items-center space-x-5 text-green-600'>
+    {
+      Links.map(({ title, url }) => (
+        <li class='font-semibold hover:text-gray-200 transition-all duration-300 text-white text-2xl capitalize'>
+          <a href={url}>{title}</a>
+        </li>
+      ))
+    }
+    <li class='font-semibold hover:text-gray-200 transition-all duration-300 text-white text-2xl capitalize cursor-pointer'>sing In</li>
+    <li
+      class='border border-white rounded px-4 text-white hover:bg-green-500 transition-all duration-200 text-xl cursor-pointer'
+    >
+      Join
+    </li>
+  </ul>
+ 
+</header>

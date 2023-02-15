@@ -1,0 +1,58 @@
+---
+const Populars = [
+  {
+    title: 'web design',
+  },
+  {
+    title: 'wordPress',
+  },
+  {
+    title: 'Logo design',
+  },
+  {
+    title: 'ai servercies',
+  },
+];
+---
+
+<section
+  class='flex items-center gap-5 py-5 md:py-0 px-5 bg-gray-900 h-[50vh]  justify-between'
+>
+  <!-- left -->
+  <div class=''>
+    <h2 class='text-white text-4xl'>
+      Find the perfect <span class='italic'>freelance</span> services for your business
+    </h2>
+
+    <div class='py-4'>
+      <input
+        type='text'
+        class='block w-full p-4 rounded-md outline-none focus:outline-none placeholder:text-gray-300'
+        placeholder='Try "bullding modlle app" '
+      />
+      <button
+        class='bg-green-600 w-full my-2 py-2 rounded-md text-white text-xl'
+        >Search</button
+      >
+
+      <!-- popular category -->
+      <div class='hidden md:flex items-center gap-3'>
+        <h4 class='text-white text-xl'>Popular:</h4>
+        <ul class='flex space-x-4 text-center'>
+          {
+            Populars.map(({ title }) => (
+              <li class='text-white text-xl border px-5  hover:bg-white transition-all duration-300 my-2 rounded-xl  py-1  cursor-pointer hover:text-gray-800'>
+                {title}
+              </li>
+            ))
+          }
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- right -->
+  <div class="hidden xl:flex">
+    <img src="/upcoming6.png" class="w-full" alt="">
+  </div>
+</section>
