@@ -1,0 +1,192 @@
+---
+import { Icon } from 'astro-icon';
+import NavDash from '../../components/NavDash.astro';
+import Layout from '../../layouts/Layout.astro';
+---
+
+<Layout title='dashboard'>
+  <NavDash />
+
+  <main class='px-10 py-10 bg-gray-200 h-screen'>
+    <div class='grid gap-5 grid-cols-2 lg:grid-cols-6 h-full w-full'>
+      <!-- left side -->
+      <section class='col-span-2'>
+        <!-- user info -->
+        <div class='shadow-md shadow-gray-600 bg-white p-4 rounded-md'>
+          <div class='flex items-center justify-between'>
+            <div class='flex items-center space-x-3'>
+              <img src='/ali.jpg' class='w-20 h-20 rounded-full' alt='' />
+              <p class='font-bold text-[22px]'>aliomer676</p>
+            </div>
+            <p class='font-bold text-[20px]'>N/A</p>
+          </div>
+          <hr class='my-5' />
+          <div class='flex flex-col space-y-3'>
+            <div class='flex items-center justify-between relative'>
+              <p class='text-2xl text-gray-400'>Inbox response rate</p>
+
+              <p class=''>100%</p>
+            </div>
+            <div class='flex items-center justify-between relative'>
+              <p class='text-2xl text-gray-400'>Inbox response rate</p>
+
+              <p class=''>100%</p>
+            </div>
+            <div class='flex items-center justify-between relative'>
+              <p class='text-2xl text-gray-400'>Inbox response rate</p>
+
+              <p class=''>100%</p>
+            </div>
+            <div class='flex items-center justify-between relative'>
+              <p class='text-2xl text-gray-400'>Inbox response rate</p>
+
+              <p class=''>100%</p>
+            </div>
+            <div class='flex items-center justify-between relative'>
+              <p class='text-2xl text-gray-400'>Inbox response rate</p>
+
+              <p class=''>100%</p>
+            </div>
+            <div class='flex items-center justify-between relative'>
+              <p class='text-2xl text-gray-400'>Inbox response rate</p>
+
+              <p class=''>100%</p>
+            </div>
+          </div>
+          <hr class='my-5' />
+          <div class='flex justify-between'>
+            <h2 class='text-2xl text-slate-400'>Earned in February</h2>
+            <p class='font-bold text-2xl'>$1000</p>
+          </div>
+        </div>
+        <!-- indox -->
+        <div class='my-4 shadow-md shadow-gray-600 bg-white p-4 rounded-md'>
+          <div class='flex justify-between items-center'>
+            <h4 class='text-2xl font-extralight'>inbox</h4>
+            <p class='font-bold text-2xl text-blue-800 cursor-pointer'>
+              view All
+            </p>
+          </div>
+        </div>
+        <!-- social networks
+ -->
+        <div class='my-4 shadow-md shadow-gray-600 bg-white p-4 rounded-md'>
+          <h3 class='text-2xl font-bold'>Link your social networks</h3>
+          <!-- icons -->
+          <div class='grid gap-3 grid-cols-4'>
+            <img class='w-20' src='/badge.png' />
+            <img class='w-20' src='/badge.png' />
+            <img class='w-20' src='/badge.png' />
+            <img class='w-20' src='/badge.png' />
+            <img class='w-20' src='/badge.png' />
+            <img class='w-20' src='/badge.png' />
+            <img class='w-20' src='/badge.png' />
+            <img class='w-20' src='/badge.png' />
+            <img class='w-20' src='/badge.png' />
+          </div>
+        </div>
+      </section>
+
+      <!-- right -->
+      <section class='col-span-4'>
+        <!-- active order -->
+        <div class='my-4 shadow-md shadow-gray-600 bg-white p-4 rounded-md'>
+          <div class='flex items-center justify-between p-1'>
+            <h2 class='font-bold text-3xl'>Active orders - 0 ($0)</h2>
+            <button
+              class='border border-gray-400 p-4 rounded-md text-3xl font-semibold'
+              >Active Orders(0)</button
+            >
+          </div>
+        </div>
+
+        <div class='py-10s relative border-t pr-2 border-[#dadbdd] my-20'>
+          <span
+            class='text-3xl font-bold inline-block absolute top-[-25px] bg-[#f5f5f5s] z-[1] text-[#62646a]'
+            >Upgrade Your Business
+          </span>
+        </div>
+
+        <!-- 3 steps to become a top seller on Fiverr -->
+        <div
+          class='my-4 shadow-md shadow-gray-600 bg-white p-4 rounded-md px-10'
+        >
+          <header class=''>
+            <h2 class='text-4xl font-bold'>
+              3 steps to become a top seller on Fiverr
+            </h2>
+            <p class='text-2xl text-slate-600 my-3'>
+              The key to your success on Fiverr is the brand you build for
+              yourself through your Fiverr reputation. We gathered some tips and
+              resources to help you become a leading seller on Fiverr.
+            </p>
+          </header>
+
+          <!-- list -->
+          <ul class='grid grid-cols-3 gap-4 py-5'>
+            <li>
+              <!-- icon -->
+              <Icon pack='mdi' name='user' class='w-20' />
+              <strong class='font-bold text-2xl'>Get noticed</strong>
+              <div class='text-xl text-gray-400'>
+                Tap into the power of social media by
+                <b class='text-gray-600 font-bold'>sharing your Gig,</b>
+                and
+                <a href='#' class='text-indigo-700 font-bold'>get expert help</a
+                >
+                to grow your impact
+              </div>
+              <div class='py-10'>
+                <a
+                  href='#'
+                  class='border border-indigo-600 px-5 py-2 rounded-md hover:bg-indigo-800 transition-all duration-300 hover:text-white text-lg md:text-2xl text-blue-600'
+                  >Share Your Gigs</a
+                >
+              </div>
+            </li>
+            <li>
+              <!-- icon -->
+              <Icon pack='mdi' name='user' class='w-20' />
+              <strong class='font-bold text-2xl'
+                >Get more skills & exposure</strong
+              >
+              <div class='text-xl text-gray-400'>
+                Hone your skills and expand your knowledge with online courses.
+                You’ll be able to offer more services and gain more exposure
+                with every course completed.
+              </div>
+              <div class='py-10'>
+                <a
+                  href='#'
+                  class='border border-indigo-600 px-5 py-2 rounded-md hover:bg-indigo-800 transition-all duration-300 hover:text-white text-lg md:text-2xl text-blue-600'
+                  >Share Your Gigs</a
+                >
+              </div>
+            </li>
+            <li>
+              <!-- icon -->
+              <Icon pack='mdi' name='user' class='w-20' />
+              <strong class='font-bold text-2xl'
+                >Become a successful seller!</strong
+              >
+              <div class='text-xl text-gray-400'>
+                Watch this free online course to learn how to create an
+                outstanding service experience for your buyer and grow your
+                career as an online freelancer.
+              </div>
+              <div class='py-10'>
+                <a
+                  href='#'
+                  class='border border-indigo-600 px-5 py-2 rounded-md hover:bg-indigo-800 transition-all duration-300 hover:text-white text-lg md:text-2xl text-blue-600'
+                  >Share Your Gigs</a
+                >
+              </div>
+            </li>
+          </ul>
+        </div>
+
+        <!-- image slide -->
+      </section>
+    </div>
+  </main>
+</Layout>

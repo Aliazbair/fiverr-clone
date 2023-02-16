@@ -1,0 +1,86 @@
+---
+import { Icon } from 'astro-icon';
+const Links = [
+  {
+    title: 'dashboard',
+    url: '',
+  },
+  {
+    title: 'my business^',
+    url: '',
+  },
+  {
+    title: 'growth & marketing',
+    url: '',
+  },
+  {
+    title: 'analytics',
+    url: '',
+  },
+];
+---
+
+<header
+  class='flex items-center justify-between p-8 shadow-md shadow-slate-200'
+>
+  <!-- left -->
+  <div class='flex items-center justify-center space-x-1'>
+    <Icon pack='mdi' name='menu' class='md:hidden w-9 text-black' />
+    <a href='/' class=''>
+      <h5
+        class='flex items-center text-2xl md:text-4xl text-black font-bold relative'
+      >
+        fiverr
+        <p
+          class='bg-green-500 p-[3.17px] absolute bottom-1 -right-2 rounded-full'
+        >
+        </p>
+      </h5>
+    </a>
+  </div>
+
+  <!-- center -->
+  <ul class='hidden lg:flex items-center space-x-5 text-green-600'>
+    {
+      Links.map(({ title, url }) => (
+        <li class='font-semibold  transition-all duration-300 text-black text-2xl capitalize'>
+          <a class='hover:bg-gray-200 p-3 rounded-sm' href={url}>
+            {title}
+          </a>
+        </li>
+      ))
+    }
+  </ul>
+
+  <!-- right -->
+  <div>
+    <ul class='flex items-center space-x-5'>
+      <li class='relative cursor-pointer p-2 hover:bg-gray-200  rounded-md'>
+        <Icon
+          pack='mdi'
+          name='notifications-none'
+          class='w-10 text-slate-600 hover:bg-gray-200 rounded-md'
+        />
+        <span
+          class='bg-red-500 rounded-full w-2 p-1 absolute h-2 top-2 right-4 ring-2 ring-red-200'
+        ></span>
+      </li>
+      <li class='p-2 hover:bg-gray-200 rounded-md'>
+        <Icon pack='ic' name='outline-email' class='w-10 text-slate-600' />
+      </li>
+      <li class='p-2 hover:bg-gray-200 rounded-md'>
+        <Icon
+          pack='ic'
+          name='baseline-help-outline'
+          class='w-10 text-slate-600'
+        />
+      </li>
+      <li class="relative">
+        <img src='/ali.jpg' class='w-16 h-16 rounded-full' alt='' />
+           <span
+          class='bg-green-500 rounded-full w-4 p-1 absolute h-4 -bottom-2 right-1 ring-2 ring-green-200'
+        ></span>
+      </li>
+    </ul>
+  </div>
+</header>
